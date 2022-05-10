@@ -1,0 +1,118 @@
+.header {
+    // position: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    z-index: 3;
+    // transition: background-color $duration;
+    // &.sticky {
+    //     background-color: #161616;
+    // }
+    &::after {
+        content: '';
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: rgba(#fff, .25);
+        backdrop-filter: blur(4px);
+        height: rem(24);
+        position: absolute;
+    }
+    .container {
+        padding-top: rem(32);
+        padding-bottom: rem(32);
+        display: flex;
+        align-items: center;
+    }
+    a {
+        transition: $duration;
+        &:hover {
+            color: $yellow;
+        }
+    }
+
+    .logo {
+        svg {
+            width: rem(264);
+            height: rem(114);
+        }
+    }
+
+    .collapsed-content {
+        // display: flex;
+        // flex-wrap: wrap;
+        // align-items: center;
+        // justify-content: space-between;
+        display: grid;
+        align-items: center;
+        grid-template-columns: auto auto;
+        margin-left: auto;
+    }
+
+    .address {
+        font-family: Jost;
+        font-size: rem(14);
+        font-weight: 700;
+        line-height: 1.4;
+        font-style: normal;
+        text-transform: uppercase;
+        a {
+            display: inline-flex;
+            align-items: center;
+        }
+        svg {
+            width: rem(12);
+            height: rem(14);
+            margin-right: rem(12);
+        }
+    }
+
+    .phone {
+        font-family: Jost;
+        font-size: rem(20);
+        font-weight: 900;
+        line-height: 1.4;
+        justify-self: end;
+        a {
+            display: flex;
+            align-items: center;
+        }
+        svg {
+            width: rem(16);
+            height: rem(16);
+            margin-right: rem(16);
+        }
+    }
+
+    .menu {
+        margin-top: rem(64);
+        font-size: rem(20);
+        font-weight: 800;
+        line-height: 1.4;
+        width: 100%;
+        grid-column: span 2;
+        ul {
+            list-style: none;
+            display: flex;
+        }
+        li {
+            &:not(:last-child) {
+                margin-right: rem(40);
+            }
+        }
+    }
+
+    .burger {
+    }
+}
+
+.mobile-menu-open {
+    @include mobile {
+        height: 100vh;
+        overflow: hidden;
+    }
+    .header {
+    }
+}

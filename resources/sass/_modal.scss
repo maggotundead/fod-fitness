@@ -1,0 +1,79 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: $duration;
+    z-index: 10;
+    &.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    &-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($black, 0.75);
+        backdrop-filter: blur(9px);
+    }
+    &-body {
+        position: relative;
+    }
+    &-content {
+        width: rem(654);
+        background-color: #fff;
+        padding: rem(104) rem(56);
+        color: $text;
+    }
+    &-close {
+        position: absolute;
+        top: rem(-32);
+        right: 0;
+        font-size: rem(20);
+        line-height: .98;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #fff;
+
+    }
+    &-title {
+        font-size: rem(48);
+    }
+    &-descr {
+        margin-top: rem(32);
+        max-width: rem(430);
+        font-size: rem(24);
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+    }
+    &-form {
+        margin-top: rem(56);
+    }
+    &-input {
+        width: 100%;
+        margin-bottom: rem(18);
+        input {
+            padding: rem(18) 0;
+            display: block;
+            width: 100%;
+            border: 0;
+            border-bottom: rem(4) solid $yellow;
+            font-size: rem(24);
+            line-height: 1.2;
+            font-weight: 600;
+        }
+    }
+    &-submit {
+        width: 100%;
+        margin-top: rem(48);
+    }
+}
