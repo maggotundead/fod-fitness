@@ -1,9 +1,14 @@
 .footer {
     background-color: $yellow;
-    padding-top: rem(80);
-    padding-bottom: rem(80);
+    padding-top: $block-padding-desktop;
+    padding-bottom: $block-padding-desktop;
     position: relative;
     overflow: hidden;
+    transition: $duration;
+    @include mobile {
+        padding-top: $block-padding-mobile;
+        padding-bottom: $block-padding-mobile;
+    }
     &::before {
         content: '';
         display: block;
@@ -15,6 +20,9 @@
         width: rem(296);
         height: rem(72);
         background-size: 100% 100%;
+        @include mobile {
+            content: none;
+        }
     }
     .container {
         z-index: 2;
@@ -23,11 +31,56 @@
         column-gap: rem(300);
         row-gap: rem(155);
         align-items: center;
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: initial;
+            column-gap: initial;
+        }
     }
     &-group {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        &.title-group {
+            @include mobile {
+                order: 1;
+            }
+        }
+        &.phones-group {
+            @include mobile {
+                order: 2;
+                margin-top: mobrem(56);
+            }
+        }
+        &.contacts-group {
+            @include mobile {
+                order: 3;
+                margin-top: mobrem(16);
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+        &.address-group {
+            @include mobile {
+                order: 4;
+                margin-top: mobrem(30);
+            }
+        }
+        &.develop-group {
+            @include mobile {
+                order: 5;
+                margin-top: mobrem(78);
+            }
+        }
+        &.copyright-group {
+            @include mobile {
+                order: 6;
+                width: 100%;
+                position: relative;
+            }
+        }
     }
     // &-title {
     //     font-size: rem(100);
@@ -38,6 +91,9 @@
         font-size: rem(40);
         font-weight: 700;
         line-height: 1.4;
+        @include mobile {
+            font-size: mobrem(24);
+        }
         a {
             display: block;
             transition: $duration;
@@ -49,6 +105,9 @@
             font-size: rem(24);
             font-weight: 700;
             display: block;
+            @include mobile {
+                font-size: mobrem(16);
+            }
         }
     }
     &-phones {
@@ -60,11 +119,17 @@
             font-weight: 600;
             line-height: 1.2;
             transition: $duration;
+            @include mobile {
+                font-size: mobrem(24);
+            }
             &:hover {
                 color: #494949;
             }
             &:not(:last-child) {
                 margin-bottom: rem(50);
+                @include mobile {
+                    margin-bottom: mobrem(16);
+                }
             }
         }
     }
@@ -73,6 +138,11 @@
         align-items: center;
         &:not(:last-child) {
             margin-bottom: rem(70);
+            @include mobile {
+                // margin-top: mobrem(30);
+                margin-top: mobrem(56);
+                margin-bottom: 0;
+            }
         }
         a {
             display: block;
@@ -81,12 +151,19 @@
                 color: #494949;
             }
             &:not(:last-child) {
-                margin-right: rem(8);
+                margin-right: rem(24);
+                @include mobile {
+                    margin-right: mobrem(24);
+                }
             }
         }
         svg {
             width: rem(64);
             height: rem(64);
+            @include mobile {
+                width: mobrem(32);
+                height: mobrem(32);
+            }
         }
     }
     &-mails {
@@ -95,6 +172,10 @@
             line-height: 1.2;
             font-weight: 600;
             transition: $duration;
+            @include mobile {
+                // font-size: mobrem(16);
+                font-size: mobrem(20);
+            }
             &:hover {
                 color: #494949;
             }
@@ -104,6 +185,9 @@
         font-size: rem(24);
         line-height: 1.2;
         font-weight: 600;
+        @include mobile {
+            font-size: mobrem(20);
+        }
         a {
             text-decoration: underline;
             transition: $duration;
@@ -116,5 +200,13 @@
         font-size: rem(24);
         line-height: 1.2;
         font-weight: 600;
+        @include mobile {
+            font-size: mobrem(32);
+            font-weight: 400;
+            transform: rotate(-90deg);
+            transform-origin: left top;
+            position: absolute;
+            right: mobrem(-38);
+        }
     }
 }

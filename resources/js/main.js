@@ -1,13 +1,13 @@
 
 const teamSwiper = new Swiper('.js-team-swiper', {
     slidesPerView: 'auto',
-    loop: false,
+    loop: true,
     draggable: true,
     // noSwiping: true,
     // mousewheel: {
     //     forceToAxis: true,
     // },
-    noSwiping: true,
+    // noSwiping: true,
     slideToClickedSlide: true,
     // keyboard: {
     //     enabled: true,
@@ -25,7 +25,7 @@ const teamSwiper = new Swiper('.js-team-swiper', {
 });
 const zoneSwiper = new Swiper('.js-zones-swiper', {
     slidesPerView: 1,
-    loop: false,
+    loop: true,
     draggable: true,
     // noSwiping: true,
     // mousewheel: {
@@ -47,6 +47,14 @@ const zoneSwiper = new Swiper('.js-zones-swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+    breakpoints: {
+        0: {
+            spaceBetween: 16,
+        },
+        768: {
+            spaceBetween: 26,
+        },
+    }
 });
 
 

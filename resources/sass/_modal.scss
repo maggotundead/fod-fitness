@@ -32,6 +32,11 @@
         background-color: #fff;
         padding: rem(104) rem(56);
         color: $text;
+        @include mobile {
+            width: 100vw;
+            padding: mobrem(80) mobrem(24) mobrem(56);
+            min-height: 100vh;
+        }
     }
     &-close {
         position: absolute;
@@ -42,10 +47,18 @@
         font-weight: 900;
         text-transform: uppercase;
         color: #fff;
-
+        @include mobile {
+            top: mobrem(24);
+            right: mobrem(24);
+            font-size: mobrem(14);
+            color: #9f9f9f;
+        }
     }
     &-title {
         font-size: rem(48);
+        @include mobile {
+            font-size: mobrem(32);
+        }
     }
     &-descr {
         margin-top: rem(32);
@@ -54,13 +67,24 @@
         font-weight: 600;
         line-height: 1.2;
         letter-spacing: 0.01em;
+        @include mobile {
+            margin-top: mobrem(24);
+            max-width: 100%;
+            font-size: mobrem(20);
+        }
     }
     &-form {
         margin-top: rem(56);
+        @include mobile {
+            margin-top: mobrem(30);
+        }
     }
     &-input {
         width: 100%;
         margin-bottom: rem(18);
+        @include mobile {
+            margin-bottom: mobrem(30);
+        }
         input {
             padding: rem(18) 0;
             display: block;
@@ -70,10 +94,18 @@
             font-size: rem(24);
             line-height: 1.2;
             font-weight: 600;
+            @include mobile {
+                padding: mobrem(18) 0;
+                border-bottom-width: mobrem(4);
+                font-size: mobrem(16);
+            }
         }
     }
     &-submit {
         width: 100%;
-        margin-top: rem(48);
+        margin-top: rem(30);
+        @include mobile {
+            margin-top: mobrem(30);
+        }
     }
 }
